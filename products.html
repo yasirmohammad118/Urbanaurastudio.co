@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watches - URBANAURA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="images/urbanaura-logo.png" alt="URBANAURA Logo" style="height:48px;vertical-align:middle;margin-right:12px;">
+                <h1>URBANAURA</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link active">Watches</a></li>
+                <li><a href="brands.html" class="nav-link">Brands</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Search watches..." id="search-input">
+                    <button type="button"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-actions">
+                    <a href="login.html" class="btn-login"><i class="fas fa-user"></i> Login</a>
+                    <a href="cart.html" class="btn-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Watch Collection</h1>
+            <p>Discover premium timepieces from the world's finest brands</p>
+        </div>
+    </section>
+
+    <!-- Filters and Products -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <h3>Categories</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" value="luxury" class="category-filter">
+                                <span>Luxury Watches</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="sports" class="category-filter">
+                                <span>Sports Watches</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="smart" class="category-filter">
+                                <span>Smart Watches</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="classic" class="category-filter">
+                                <span>Classic Watches</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Brands</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" value="Rolex" class="brand-filter">
+                                <span>Rolex</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Omega" class="brand-filter">
+                                <span>Omega</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Cartier" class="brand-filter">
+                                <span>Cartier</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Apple" class="brand-filter">
+                                <span>Apple</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Seiko" class="brand-filter">
+                                <span>Seiko</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="Patek Philippe" class="brand-filter">
+                                <span>Patek Philippe</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Price Range</h3>
+                        <div class="price-range">
+                            <input type="range" id="price-min" min="0" max="30000" value="0" class="price-slider">
+                            <input type="range" id="price-max" min="0" max="30000" value="30000" class="price-slider">
+                        </div>
+                    </div>
+
+                    <button class="btn-primary" onclick="applyFilters()">Apply Filters</button>
+                    <button class="btn-secondary" onclick="clearFilters()">Clear All</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <main class="products-main">
+                    <div class="products-header">
+                        <div class="products-count">
+                            <span id="products-count">0</span> products found
+                        </div>
+                        <div class="products-sort">
+                            <label for="sort-select">Sort by:</label>
+                            <select id="sort-select" onchange="sortProducts()">
+                                <option value="default">Default</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="name-asc">Name: A to Z</option>
+                                <option value="name-desc">Name: Z to A</option>
+                                <option value="brand">Brand</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="products-grid">
+                        <!-- Products will be loaded here -->
+                    </div>
+
+                    <div class="pagination" id="pagination">
+                        <!-- Pagination will be generated here -->
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-clock"></i> URBANAURA</h3>
+                    <p>Your trusted destination for premium watches. We offer authentic timepieces from the world's finest brands.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Watches</a></li>
+                        <li><a href="brands.html">Brands</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Shipping Information</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Warranty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@urbanaura.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Luxury Ave, Watch City, WC 12345</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 URBANAURA. All rights reserved. | Authentic Watches Guaranteed</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html> 
