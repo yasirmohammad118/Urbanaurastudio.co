@@ -124,6 +124,46 @@ const sampleProducts = [
         description: "A rugged and shock-resistant sports watch with a carbon core guard structure, 200m water resistance, and bold octagonal design. Built for adventure.",
         badge: "Fun"
     },
+    {
+        id: 13,
+        name: "FOSSIL Rhett Chronograph Watch for Men",
+        brand: "Fossil",
+        price: 3100,
+        category: "sports",
+        image: "images/16.jpg",
+        description: "Blends classic style with modern functionality for a Bold sophisticated look",
+        badge: "Fun"
+    },
+    {
+        id: 14,
+        name: "SANTOS DE CARTIER WATCH",
+        brand: "CARTIER",
+        price: 5000,
+        category: "luxury",
+        image: "images/17.jpg",
+        description: "Cartier Ultra - Premium Santos Original Model Series",
+        badge: "Fun"
+    },
+    {
+        id: 15,
+        name: "Longines Spirit",
+        brand: "Longines",
+        price: 2300,
+        category: "luxury",
+        image: "images/18.jpg",
+        description: "Combine timeless elegance with the aviation inspired design offering precision and durability for the modern adventurer",
+        badge: "Fun"
+    },
+    {
+        id: 16,
+        name: "Armani Hamptom",
+        brand: "Armani Exchange",
+        price: 2500,
+        category: "luxury",
+        image: "images/19.jpg",
+        description: "Enrich your outfit with a hint of sophistication and elegance.",
+        badge: "Fun"
+    },
 ];
 
 // Initialize the application
